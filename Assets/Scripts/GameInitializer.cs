@@ -22,7 +22,7 @@ public class GameInitializer : MonoBehaviour {
 		Assert.IsNotNull(playerController, "Player Controller was not assigned in inspector.");
 		Assert.IsNotNull(cluckController, "Player Controller was not assigned in inspector.");
 
-		//#if (UNITY_ANDROID || UNITY_IOS) && !UNITY_EDITOR
+#if (UNITY_ANDROID || UNITY_IOS) && !UNITY_EDITOR
 		WalkButtonsEventsGenerator generator =
 			Instantiate(walkScreenButtons, canvas.transform).GetComponent<WalkButtonsEventsGenerator>();
 		generator.axisChanged.AddListener(playerController.OnMove);
@@ -32,6 +32,6 @@ public class GameInitializer : MonoBehaviour {
 		CorrectedButton cluck =
 			Instantiate(cluckButton, canvas.transform).GetComponent<CorrectedButton>();
 		cluck.onClick.AddListener(cluckController.OnCluck);
-//#endif
+#endif
 	}
 }
