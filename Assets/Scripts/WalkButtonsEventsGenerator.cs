@@ -13,10 +13,13 @@ public class WalkButtonsEventsGenerator : MonoBehaviour {
 	[SerializeField] CorrectedButton buttonBack;
 	[SerializeField] CorrectedButton buttonLeft;
 	[SerializeField] CorrectedButton buttonRight;
+	[SerializeField] CorrectedButton buttonJump;
 
 	[Serializable]
 	public class AxisChangedEvent : UnityEvent<Vector2> { }
-	public AxisChangedEvent axisChanged = new AxisChangedEvent();
+	public AxisChangedEvent axisChanged;
+
+	public UnityEvent jumped;
 
 	Vector2 curAxis;
 
@@ -26,6 +29,7 @@ public class WalkButtonsEventsGenerator : MonoBehaviour {
 		Assert.IsNotNull(buttonBack, "Button Back was not assigned in inspector.");
 		Assert.IsNotNull(buttonLeft, "Button Left was not assigned in inspector.");
 		Assert.IsNotNull(buttonRight, "Button Right was not assigned in inspector.");
+		Assert.IsNotNull(buttonJump, "Button Jump was not assigned in inspector.");
 	}
 
 	void Start() {
@@ -62,5 +66,7 @@ public class WalkButtonsEventsGenerator : MonoBehaviour {
 			curAxis.x -= 1.0f;
 			axisChanged.Invoke(curAxis);
 		});
+
+		buttonJump.buttonUp.AddListener(() => jumped.Invoke());
 	}
 }

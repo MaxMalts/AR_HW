@@ -429,7 +429,11 @@ MonoBehaviour:
   buttonBack: {fileID: 6502153729151685542}
   buttonLeft: {fileID: 6898891799908704768}
   buttonRight: {fileID: 1046905998741843084}
+  buttonJump: {fileID: 154453427608102338}
   axisChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  jumped:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &8180496748563029992

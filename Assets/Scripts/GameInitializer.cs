@@ -20,11 +20,14 @@ public class GameInitializer : MonoBehaviour {
 		Assert.IsNotNull(walkScreenButtons, "Walk Screen Buttons prefab was not assigned in inspector.");
 		Assert.IsNotNull(cluckButton, "Cluck Button prefab was not assigned in inspector.");
 		Assert.IsNotNull(playerController, "Player Controller was not assigned in inspector.");
+		Assert.IsNotNull(cluckController, "Player Controller was not assigned in inspector.");
 
 		//#if (UNITY_ANDROID || UNITY_IOS) && !UNITY_EDITOR
 		WalkButtonsEventsGenerator generator =
 			Instantiate(walkScreenButtons, canvas.transform).GetComponent<WalkButtonsEventsGenerator>();
 		generator.axisChanged.AddListener(playerController.OnMove);
+		generator.jumped.AddListener(playerController.OnJump);
+		
 
 		CorrectedButton cluck =
 			Instantiate(cluckButton, canvas.transform).GetComponent<CorrectedButton>();

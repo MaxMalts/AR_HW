@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
   <Tracking>
-    <ImageTarget name="leaf-texture" size="1.000000 1.000000" />
-    <ImageTarget name="grass-texture" size="1.000000 0.718229" />
-    <ImageTarget name="Icon" size="1.000000 1.000000" />
-    <ImageTarget name="gettyimages-1133192531-612x612" size="1.000000 1.000000" />
+    <ImageTarget name="Floor" size="1.000000 0.562061" />
+    <ImageTarget name="Chicks" size="1.000000 0.562061" />
   </Tracking>
 </QCARConfig>
