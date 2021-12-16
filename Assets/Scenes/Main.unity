@@ -1384,8 +1384,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b59416e58ef01b4b83320103525bcdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkForceCoefficient: 1
-  maxSpeed: 2
+  walkForceCoefficient: 8
+  maxSpeed: 0.2
   jumpForce: 2
   imageFinder: {fileID: 39713961}
 --- !u!82 &685630230
